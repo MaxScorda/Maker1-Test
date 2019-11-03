@@ -13,6 +13,7 @@ void setup() {
 }
 
 void loop() {
+  //In this way for easy change music & light combinations
   digitalWrite(13, LOW);
   digitalWrite(2, HIGH);
   playTone(0, duration);
@@ -71,7 +72,7 @@ void playTone(int nota, int tempdur) {
     pinMode (BUTTON, INPUT_PULLUP);
     buttonStat = digitalRead(BUTTON);
     pinMode (BUTTON, OUTPUT);
-       if (nota>0)   digitalWrite(2, LOW); 
+    if (nota > 0)   digitalWrite(2, LOW);
     if  (buttonStat != buttonStatOld)  {
       buttonStatOld = buttonStat;
       if (buttonStat == 0) {
@@ -84,6 +85,6 @@ void playTone(int nota, int tempdur) {
     delayMicroseconds(tone);
     digitalWrite(BUZZER, LOW);
     delayMicroseconds(tone);
-  }  
- 
+  }
+
 }
